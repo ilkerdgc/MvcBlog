@@ -1,0 +1,65 @@
+﻿@model MvcBlog.Models.Uye
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-md-8" style="margin-top:25px">
+    <h2>Üye Profili</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Yetki:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yetki.Yetki1)
+        </dd>
+
+        <dt>
+            @Html.Label("Kullanıcı Adı:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullaniciAdi)
+        </dd>
+
+        <dt>
+            @Html.Label("E-Mail:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.Label("Şifre:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+
+        <dt>
+            @Html.Label("Ad Soyad:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdSoyad)
+        </dd>
+
+        <dt>
+            @Html.Label("Foto:")
+        </dt>
+
+        <dd>
+            <img src="@Model.Foto" style="border-radius:50%" alt="@Model.AdSoyad"/>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Güncelle", "Edit", new { id = Model.UyeID }, new { @class = "btn btn-info" }) 
+</p>

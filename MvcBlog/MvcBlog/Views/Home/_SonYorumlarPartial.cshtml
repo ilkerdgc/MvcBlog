@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MvcBlog.Models.Yorum>
+
+@{ 
+    Layout = null;
+}
+
+<h5 class="card-header">Son Yorumlar</h5>
+<div class="row">
+    <div class="card-body">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li><a href="/Uye/UyeProfili/@item.UyeID"><img style="border-radius:50%" width="30" src="@item.Uye.Foto" alt="@item.Uye.AdSoyad" /></a>: "@item.Icerik"</li>
+                
+            }
+        </ul>
+    </div>
+</div>

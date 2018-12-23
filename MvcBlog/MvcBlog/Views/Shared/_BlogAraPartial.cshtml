@@ -1,0 +1,13 @@
+﻿<h5 class="card-header">Makale Ara</h5>
+@using (Html.BeginForm("BlogAra", "Home", FormMethod.Post, new { enctype="multipart/form-data" }))
+{
+    <div class="card-body">
+        <div class="input-group">
+            <input id="Ara" name="Ara" type="text" class="form-control" placeholder="Aranacak makaleyi giriniz...">
+            <span class="input-group-btn">
+                <button class="btn btn-success" value="Ara" type="submit">Ara</button>
+            </span>
+        </div>
+    </div>
+}
+

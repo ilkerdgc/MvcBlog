@@ -1,0 +1,64 @@
+﻿@model MvcBlog.Models.Uye
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div>
+    <h4>Üye Detay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Yetki:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yetki.Yetki1)
+        </dd>
+
+        <dt>
+            @Html.Label("Kullanıcı Adı:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullaniciAdi)
+        </dd>
+
+        <dt>
+            @Html.Label("E-Mail:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.Label("Şifre:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+
+        <dt>
+            @Html.Label("Ad Soyad:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdSoyad)
+        </dd>
+
+        <dt>
+            @Html.Label("Foto:")
+        </dt>
+
+        <dd>
+            <img src="@Model.Foto" width="75" style="border-radius:50%" alt=""/>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Geri Dön", "Index")
+</p>

@@ -1,0 +1,78 @@
+﻿@model MvcBlog.Models.Makale
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 style="color:red">Makaleyi silmeyi onaylıyor musunuz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Kategori Adı")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategori.KategoriAdi)
+        </dd>
+
+        <dt>
+            @Html.Label("Başlık")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Baslik)
+        </dd>
+
+        <dt>
+            @Html.Label("İçerik")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Icerik)
+        </dd>
+
+        <dt>
+            @Html.Label("Foto")
+        </dt>
+
+        <dd>
+            <img width="150" src="@Model.Foto" alt="Alternate Text"/>
+        </dd>
+
+        <dt>
+            @Html.Label("Tarih")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+
+        <dt>
+            @Html.Label("ÜyeID")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UyeID)
+        </dd>
+
+        <dt>
+            @Html.Label("Okunma")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Okunma)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input style="cursor:pointer" type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Geri Dön", "Index")
+        </div>
+    }
+</div>

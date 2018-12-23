@@ -1,0 +1,53 @@
+﻿@model MvcBlog.Models.Uye
+
+@{
+    ViewBag.Title = "UyeProfili";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="margin-top:25px">Üye Profili</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Yetki:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yetki.Yetki1)
+        </dd>
+
+        <dt>
+            @Html.Label("E-Mail:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.Label("Ad Soyad:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdSoyad)
+        </dd>
+
+        <dt>
+            @Html.Label("Foto:")
+        </dt>
+
+        <dd>
+            <img src="@Model.Foto" width="75" style="border-radius:50%" alt="@Model.AdSoyad" />
+        </dd>
+    </dl>
+</div>
+<h4>Son Eklediği Makaleler:</h4>
+<div>
+    @foreach (var item in Model.Makales.OrderByDescending(m => m.MakaleID).Take(5))
+    {
+        <li><a href="/Home/MakaleDetay/@item.MakaleID">@item.Baslik</a></li>
+    }
+    
+</div>

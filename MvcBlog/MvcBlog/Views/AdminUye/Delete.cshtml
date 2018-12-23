@@ -1,0 +1,70 @@
+﻿@model MvcBlog.Models.Uye
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 style="color:red">Üye silmeyi onaylıyor musunuz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Yetki:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yetki.Yetki1)
+        </dd>
+
+        <dt>
+            @Html.Label("Kullanıcı Adı:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullaniciAdi)
+        </dd>
+
+        <dt>
+            @Html.Label("E-Mail:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.Label("Şifre:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sifre)
+        </dd>
+
+        <dt>
+            @Html.Label("Ad Soyad:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdSoyad)
+        </dd>
+
+        <dt>
+            @Html.Label("Foto:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input style="cursor:pointer" type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Geri Dön", "Index")
+        </div>
+    }
+</div>
